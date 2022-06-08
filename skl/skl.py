@@ -1,0 +1,2 @@
+def zimbas():
+    print("blau")
