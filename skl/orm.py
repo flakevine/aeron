@@ -261,7 +261,7 @@ def connect(db_path: str) -> Database:
     connection = sqlite.connect(db_path)
     cursor = connection.cursor()
 
-    cursor.execute('SELECT * FROM sqlite_sequence;')
+    cursor.execute('SELECT name from sqlite_master where type= "table";')
     tables = cursor.fetchall()
     table_names = [table[0] for table in tables]
 
