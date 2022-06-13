@@ -1,2 +1,2 @@
 # aeron
-A fast and dinamic python backend solution
+A fast and dynamic python backend solution
