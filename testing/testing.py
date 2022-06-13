@@ -1,4 +1,4 @@
-from skl.orm import connect
+from aeron.core import connect
 
 # usuarios_fieldlist = [Field(field_name="Id", field_type="INTEGER", is_primary_key=True),
 #                       Field(field_name="Nome", field_type="TEXT", field_max_length=100),
