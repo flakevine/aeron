@@ -128,7 +128,13 @@ class Database:
             connection.commit()
             connection.close()
             return True
+        except sqlite.Error as err:
+            print(f"Failed to update {tablename}. Error:", err)
+            connection.rollback()
+            connection.close()
+            return False
         except:
+            print("Unknown error ocurred...")
             connection.rollback()
             connection.close()
             return False
@@ -270,6 +276,7 @@ def connect(db_path: str) -> Database:
     for table_name in table_names:
         cursor.execute(f'PRAGMA table_info({table_name})')
         field_info_tuples = cursor.fetchall()
+        print(field_info_tuples)
 
         fields = []
         for field_info in field_info_tuples:
